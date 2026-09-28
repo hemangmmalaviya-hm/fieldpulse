@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FieldPulse - Field Force Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .dashboards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-color: #667eea;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .card-role {
+            display: inline-block;
+            background: #f0f4ff;
+            color: #667eea;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .btn-open {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-open:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .info-box {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid white;
+            border-radius: 12px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .dashboards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 FieldPulse</h1>
+            <p>Zero-Cost Field Force Management System</p>
+        </div>
+
+        <div class="dashboards-grid">
+            <!-- ASM Dashboard -->
+            <a href="ASM_View.html" class="dashboard-card">
+                <div class="card-icon">👤</div>
+                <div class="card-role">ASM View</div>
+                <h3 class="card-title">ASM Dashboard</h3>
+                <p class="card-description">Area Sales Manager dashboard for tracking team performance and individual daily metrics.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- BSM Dashboard -->
+            <a href="BSM_View.html" class="dashboard-card">
+                <div class="card-icon">👥</div>
+                <div class="card-role">BSM View</div>
+                <h3 class="card-title">BSM Dashboard</h3>
+                <p class="card-description">Branch Sales Manager dashboard for regional team oversight and performance analytics.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- Sr_BSM Dashboard -->
+            <a href="Sr_BSM_View.html" class="dashboard-card">
+                <div class="card-icon">🏢</div>
+                <div class="card-role">Sr. BSM View</div>
+                <h3 class="card-title">Senior BSM Dashboard</h3>
+                <p class="card-description">Senior Branch Sales Manager dashboard with multi-team hierarchy view.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- TSH Dashboard -->
+            <a href="TSH_View.html" class="dashboard-card">
+                <div class="card-icon">🌍</div>
+                <div class="card-role">TSH View</div>
+                <h3 class="card-title">TSH Dashboard</h3>
+                <p class="card-description">Territory Sales Head dashboard with complete organizational hierarchy drill-down.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- RM Dashboard -->
+            <a href="RM_View.html" class="dashboard-card">
+                <div class="card-icon">📊</div>
+                <div class="card-role">RM View</div>
+                <h3 class="card-title">RM Dashboard</h3>
+                <p class="card-description">Relationship Manager individual dashboard for personal performance tracking.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- RSM Dashboard -->
+            <a href="RSM_View.html" class="dashboard-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-role">RSM View</div>
+                <h3 class="card-title">RSM Dashboard</h3>
+                <p class="card-description">Regional Sales Manager dashboard with regional hierarchy and team performance overview.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+
+            <!-- Coordinator Dashboard -->
+            <a href="Coordinator_View.html" class="dashboard-card">
+                <div class="card-icon">⚙️</div>
+                <div class="card-role">Coordinator View</div>
+                <h3 class="card-title">Coordinator Dashboard</h3>
+                <p class="card-description">Operations coordinator dashboard with DSA tracking and collection management.</p>
+                <button class="btn-open">Open Dashboard →</button>
+            </a>
+        </div>
+
+        <div class="info-box">
+            <h3>📱 Mobile Friendly</h3>
+            <p>All dashboards are fully responsive and work seamlessly on smartphones, tablets, and desktops.<br>
+            Real-time commitment & achievement tracking with secure login system.</p>
+        </div>
+
+        <div class="footer">
+            <p>FieldPulse © 2026 | JM Financial Home Loans | Powered by Google Sheets & Apps Script</p>
+        </div>
+    </div>
+</body>
+</html>
